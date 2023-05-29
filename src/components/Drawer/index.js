@@ -38,7 +38,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
 						className={styles.cartItemRemoveBtn}
 						width={32}
 						height={32}
-						src='/img/remove-btn.svg'
+						src={process.env.PUBLIC_URL + '/img/remove-btn.svg'}
 						alt='close'
 					/>
 				</h2>
@@ -51,7 +51,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
 									<img
 										width={70}
 										height={70}
-										src={item.imgUrl}
+										src={process.env.PUBLIC_URL + item.imgUrl}
 										alt='sneakers'
 									/>
 									<div className={styles.cartItemText}>
@@ -63,7 +63,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
 										className={styles.cartItemRemoveBtn}
 										width={32}
 										height={32}
-										src='/img/remove-btn.svg'
+										src={process.env.PUBLIC_URL + '/img/remove-btn.svg'}
 										alt='remove'
 									/>
 								</div>
@@ -89,7 +89,10 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
 								className={'green-btn ' + styles.greenBtn}
 							>
 								Оформить заказ
-								<img src='/img/arrow.svg' alt='arrow' />
+								<img
+									src={process.env.PUBLIC_URL + '/img/arrow.svg'}
+									alt='arrow'
+								/>
 							</button>
 						</div>
 					</>
@@ -103,8 +106,8 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
 						}
 						img={
 							isOrderComplete
-								? '/img/order-complete.png'
-								: '/img/cart-empty.jpg'
+								? `${process.env.PUBLIC_URL}/img/order-complete.png`
+								: `${process.env.PUBLIC_URL}/img/cart-empty.jpg`
 						}
 					/>
 				)}

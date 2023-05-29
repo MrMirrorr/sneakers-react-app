@@ -51,14 +51,19 @@ function Card({
 							<img
 								src={
 									isFavorite
-										? '/img/heart-enabled.svg'
-										: '/img/heart-disabled.svg'
+										? `${process.env.PUBLIC_URL}/img/heart-enabled.svg`
+										: `${process.env.PUBLIC_URL}/img/heart-disabled.svg`
 								}
 								alt='favorite'
 							/>
 						)}
 					</div>
-					<img width={133} height={112} alt='sneakers' src={imgUrl} />
+					<img
+						width={133}
+						height={112}
+						alt='sneakers'
+						src={process.env.PUBLIC_URL + imgUrl}
+					/>
 					<h5 className={styles.cardTitle}>{name}</h5>
 					<div className={styles.cardBottomBlock}>
 						<div className={styles.cardPrice}>
@@ -72,7 +77,9 @@ function Card({
 									height={32}
 									alt='add'
 									src={
-										isItemAdded(id) ? '/img/checked.svg' : '/img/add-btn.svg'
+										isItemAdded(id)
+											? `${process.env.PUBLIC_URL}/img/checked.svg`
+											: `${process.env.PUBLIC_URL}/img/add-btn.svg`
 									}
 								/>
 							)}

@@ -111,6 +111,10 @@ body {
 .sneakers {
 	display: flex;
 	flex-wrap: wrap;
+
+	&--orders {
+		display: block;
+	}
 }
 
 .sneakersOrder {
@@ -242,4 +246,9 @@ body {
 			transition: transform 0.2s ease-out;
 		}
 	}
+}
+
+// Orders
+.orderBlock {
+	padding-bottom: 20px;
 }

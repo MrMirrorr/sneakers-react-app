@@ -30,7 +30,7 @@ function Home({
 					{searchValue ? `Поиск по запросу: "${searchValue}"` : 'Все кроссовки'}
 				</h1>
 				<div className='content__header-search'>
-					<img src='/img/search.svg' alt='search' />
+					<img src={process.env.PUBLIC_URL + '/img/search.svg'} alt='search' />
 					<input
 						value={searchValue}
 						onChange={onChangeSearchInput}

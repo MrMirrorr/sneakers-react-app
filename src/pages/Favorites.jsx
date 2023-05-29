@@ -29,13 +29,20 @@ function Favorites() {
 			) : (
 				<div className='flex-center'>
 					<div className='favoritesEmpty'>
-						<img width={70} src='/img/favorites-empty.png' alt='smile-sad' />
+						<img
+							width={70}
+							src={process.env.PUBLIC_URL + '/img/favorites-empty.png'}
+							alt='smile-sad'
+						/>
 						<h3>Закладок нет</h3>
 						<p>Вы ничего не добавляли в закладки</p>
 						<Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
 							<button className='green-btn'>
 								Вернуться назад
-								<img src='/img/arrow-back.svg' alt='arrow' />
+								<img
+									src={process.env.PUBLIC_URL + '/img/arrow-back.svg'}
+									alt='arrow'
+								/>
 							</button>
 						</Link>
 					</div>

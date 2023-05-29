@@ -11,7 +11,7 @@ function Info({ img, title, description }) {
 			<p>{description}</p>
 			<button onClick={() => setCartOpened(false)} className='green-btn'>
 				Вернуться назад
-				<img src='/img/arrow-back.svg' alt='arrow' />
+				<img src={process.env.PUBLIC_URL + '/img/arrow-back.svg'} alt='arrow' />
 			</button>
 		</div>
 	);

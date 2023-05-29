@@ -26,7 +26,7 @@ function Orders() {
 	const renderItems = () => {
 		if (isLoading) {
 			return [...Array(8)].map((_, index) => <Card key={index} />);
-		} else {
+		} else if (orders.length > 0) {
 			return orders.map((order, index) => (
 				<div className='orderBlock' key={index}>
 					<h3 className='orderTitle'>Заказ # {order.id}</h3>
@@ -37,6 +37,32 @@ function Orders() {
 					</div>
 				</div>
 			));
+		} else {
+			return (
+				<div className='flex-center'>
+					<div className='favoritesEmpty'>
+						<img
+							width={70}
+							src={process.env.PUBLIC_URL + '/img/orders-empty.png'}
+							alt='smile-sad'
+						/>
+						<h3>У вас нет заказов</h3>
+						<p>
+							Все еще не купили наши кроссовки? <br /> Оформите хотя бы один
+							заказ.
+						</p>
+						<Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
+							<button className='green-btn'>
+								Вернуться назад
+								<img
+									src={process.env.PUBLIC_URL + '/img/arrow-back.svg'}
+									alt='arrow'
+								/>
+							</button>
+						</Link>
+					</div>
+				</div>
+			);
 		}
 	};
 
@@ -45,26 +71,9 @@ function Orders() {
 			<div className='content__header'>
 				<h1 className='content__header-title'>Мои заказы</h1>
 			</div>
-
-			{orders.length > 0 ? (
-				<div className='sneakers sneakers--orders'>{renderItems()}</div>
-			) : (
-				<div className='flex-center'>
-					<div className='favoritesEmpty'>
-						<img width={70} src='/img/orders-empty.png' alt='smile-sad' />
-						<h3>У вас нет заказов</h3>
-						<p>
-							Вы нищеброд? <br /> Оформите хотя бы один заказ.
-						</p>
-						<Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
-							<button className='green-btn'>
-								Вернуться назад
-								<img src='/img/arrow-back.svg' alt='arrow' />
-							</button>
-						</Link>
-					</div>
-				</div>
-			)}
+			<div className={`sneakers ${!isLoading && 'sneakers--orders'}`}>
+				{renderItems()}
+			</div>
 		</div>
 	);
 }

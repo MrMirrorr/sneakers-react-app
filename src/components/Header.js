@@ -8,7 +8,12 @@ function Header({ onClickCart }) {
 		<div className='header'>
 			<Link to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
 				<div className='header__left'>
-					<img width={40} height={40} alt='logo' src='/img/logo.png' />
+					<img
+						width={40}
+						height={40}
+						alt='logo'
+						src={process.env.PUBLIC_URL + '/img/logo.png'}
+					/>
 					<div className='header__info'>
 						<h2 className='header__title'>React Sneakers</h2>
 						<p className='header__subtitle'>Магазин лучших кроссовок</p>
@@ -18,7 +23,12 @@ function Header({ onClickCart }) {
 
 			<ul className='header__right'>
 				<li onClick={onClickCart}>
-					<img width={18} height={18} alt='cart' src='/img/cart.svg' />
+					<img
+						width={18}
+						height={18}
+						alt='cart'
+						src={process.env.PUBLIC_URL + '/img/cart.svg'}
+					/>
 					<span className='total-price'>{totalPrice} руб.</span>
 				</li>
 				<li>
@@ -27,7 +37,7 @@ function Header({ onClickCart }) {
 							width={18}
 							height={18}
 							alt='favorites-ico'
-							src='/img/favorite.svg'
+							src={process.env.PUBLIC_URL + '/img/favorite.svg'}
 						/>
 					</Link>
 				</li>
@@ -37,7 +47,7 @@ function Header({ onClickCart }) {
 							width={18}
 							height={18}
 							alt='profile-ico'
-							src='/img/profile.svg'
+							src={process.env.PUBLIC_URL + '/img/profile.svg'}
 						/>
 					</Link>
 				</li>

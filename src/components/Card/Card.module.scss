@@ -1,0 +1,49 @@
+.card {
+	margin: 10px;
+	padding: 30px;
+	width: 220px;
+	border: 1px solid #f3f3f3;
+	border-radius: 40px;
+	transition: box-shadow 0.2s, transform 0.2s ease-in-out;
+
+	&:hover {
+		box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.06);
+		transform: translateY(-5px);
+	}
+
+	.favorite {
+		position: absolute;
+		cursor: pointer;
+	}
+
+	img {
+		margin: 0 auto;
+	}
+
+	.cardTitle {
+		padding: 15px 0;
+		font-weight: 400;
+		font-size: 14px;
+	}
+
+	.cardBottomBlock {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.cardPrice {
+			p {
+				font-weight: 500;
+				font-size: 11px;
+				text-transform: uppercase;
+
+				color: #bdbdbd;
+			}
+		}
+
+		.cardAddBtn {
+			border-radius: 8px;
+			cursor: pointer;
+		}
+	}
+}
